@@ -1,0 +1,113 @@
+Microsoft Windows [Version 6.1.7601]
+(c) Корпорация Майкрософт (Microsoft Corp.), 2009. Все права защищены.
+
+d:\Rukosuev\Ucheba\HomeWork1>git config --global user.name "nickrukos"
+
+d:\Rukosuev\Ucheba\HomeWork1>git config --global user.email nickrukos@mail.ru
+
+d:\Rukosuev\Ucheba\HomeWork1>git config --global user.name
+nickrukos
+
+d:\Rukosuev\Ucheba\HomeWork1>git config --global user.email
+nickrukos@mail.ru
+
+d:\Rukosuev\Ucheba\HomeWork1>git init
+Initialized empty Git repository in D:/Rukosuev/Ucheba/HomeWork1/.git/
+
+d:\Rukosuev\Ucheba\HomeWork1>git status
+On branch develop
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+        file2.txt
+        file3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+d:\Rukosuev\Ucheba\HomeWork1>git add file1.txt,file2.txt,file3.txt
+fatal: pathspec 'file1.txt,file2.txt,file3.txt' did not match any files
+
+d:\Rukosuev\Ucheba\HomeWork1>git add *
+
+d:\Rukosuev\Ucheba\HomeWork1>git status
+On branch develop
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+        new file:   file3.txt
+
+
+d:\Rukosuev\Ucheba\HomeWork1>git commit -m "first save'
+[develop (root-commit) c587447] first save'
+ 3 files changed, 3 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+ create mode 100644 file3.txt
+
+d:\Rukosuev\Ucheba\HomeWork1>git add *
+
+d:\Rukosuev\Ucheba\HomeWork1>git status
+On branch develop
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file1.txt
+        modified:   file3.txt
+        renamed:    file2.txt -> file_new2.txt
+
+
+d:\Rukosuev\Ucheba\HomeWork1>git commit -m "second save"
+[develop b030619] second save
+ 3 files changed, 2 insertions(+), 2 deletions(-)
+ delete mode 100644 file1.txt
+ rename file2.txt => file_new2.txt (100%)
+
+d:\Rukosuev\Ucheba\HomeWork1>git add file_new2.txt
+
+d:\Rukosuev\Ucheba\HomeWork1>git add file3.txt
+
+d:\Rukosuev\Ucheba\HomeWork1>git add .gitignore
+
+d:\Rukosuev\Ucheba\HomeWork1>git status
+On branch develop
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+
+d:\Rukosuev\Ucheba\HomeWork1>git commit -m "third save"
+[develop 112b652] third save
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .gitignore
+
+d:\Rukosuev\Ucheba\HomeWork1>git remote add origin https://github.com/nickrukos/
+Homework1.git
+
+d:\Rukosuev\Ucheba\HomeWork1>git push -u origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/nickrukos/Homework1.git'
+
+d:\Rukosuev\Ucheba\HomeWork1>git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/nickrukos/Homework1.git'
+
+d:\Rukosuev\Ucheba\HomeWork1>git push -u origin develop
+Username for 'https://github.com': nickrukos
+Password for 'https://nickrukos@github.com':
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (11/11), 798 bytes | 399.00 KiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/nickrukos/Homework1.git
+ * [new branch]      develop -> develop
+branch 'develop' set up to track 'origin/develop'.
+
+d:\Rukosuev\Ucheba\HomeWork1>
